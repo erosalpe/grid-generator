@@ -15,8 +15,6 @@
                 localStorage.setItem('lastNumber', last);
                 localStorage.setItem('generate', true);
                 localStorage.setItem([]);
-                localStorage.setItem('borderColor', borderColor.value);
-                localStorage.setItem('innerColor', innerColor.value);
             }
         }
     }
