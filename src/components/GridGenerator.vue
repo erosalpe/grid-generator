@@ -26,7 +26,7 @@
         clickedSquares.value = [];
         borderColor.value = '#FFF351';
         innerColor.value = '#FFF351';
-        firstNumber.value = 0;
+        firstNumber.value = 1;
         lastNumber.value = 1;
 
         // Rimuovi tutti i valori dal localStorage
