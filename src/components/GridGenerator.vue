@@ -14,7 +14,6 @@
                 localStorage.setItem('firstNumber', first);
                 localStorage.setItem('lastNumber', last);
                 localStorage.setItem('generate', true);
-                localStorage.setItem([]);
             }
         }
     }
@@ -126,7 +125,7 @@
         
         <div class="row justify-content-center"  v-if="generate">
             <div class="d-flex flex-wrap gap-4 pt-5 col-sm-12 col-md-11 justify-content-center">
-                <div :class="['square', 'fw-bold', 'fs-5', {clicked: isClicked}]" v-for="i in lastNumber - firstNumber + 1" :key="i" :id="i" @click="toggleClass(i)" :style="{ borderColor: borderColor }">
+                <div :class="['square', 'fw-bold', 'fs-5']" v-for="i in lastNumber - firstNumber + 1" :key="i" :id="i" @click="toggleClass(i)" :style="{ borderColor: borderColor }">
                     {{ firstNumber -1 + i }}
                 </div>
             </div>
