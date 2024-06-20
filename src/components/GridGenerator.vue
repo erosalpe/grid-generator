@@ -14,6 +14,8 @@
                 localStorage.setItem('firstNumber', first);
                 localStorage.setItem('lastNumber', last);
                 localStorage.setItem('generate', true);
+                localStorage.setItem('borderColor', borderColor.value);
+                localStorage.setItem('innerColor', innerColor.value);
             }
         }
     }
@@ -50,24 +52,25 @@
         }
     }
 
-    // Funzione per aggiornare il colore selezionato
+    // Funzione per aggiornare il colore interno selezionato 
     const updateColor = (color) => {
         innerColor.value = color;
         localStorage.setItem('innerColor', color);
-        updateBorderColor();
+        updateInnerColor();
     };
 
-    // Funzione per aggiornare il colore del bordo
-    const updateBorderColor = () => {
-        document.documentElement.style.setProperty('--border-color', innerColor.value);
-        localStorage.setItem('borderColor', innerColor.value);
+    // Funzione per aggiornare il colore interno
+    const updateInnerColor = () => {
+        document.documentElement.style.setProperty('--inner-color', innerColor.value);
+        localStorage.setItem('innerColor', innerColor.value);
     };
 
-    // Aggiorna il colore del bordo all'avvio
-    updateBorderColor();
+    
 
     //ricarica i riquadri cliccati all'avvio
     onMounted(() => {
+        // Aggiorna il colore interno all'avvio
+        updateInnerColor();
         // Aggiungi le classi 'checked' ai quadrati cliccati
         clickedSquares.value.forEach(id => {
             const element = document.getElementById(id);
@@ -140,7 +143,7 @@
 
 <style scoped>
     :root{
-        --border-color: #FFF351;
+        --inner-color: #FFF351;
     }
 
     .square{
@@ -156,8 +159,8 @@
     }
 
     .checked{
-        background-color: var(--border-color);
-        color: var(--border-color);
+        background-color: var(--inner-color);
+        color: var(--inner-color);
     }
 
     .inputWidth{
