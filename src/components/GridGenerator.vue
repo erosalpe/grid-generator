@@ -2,8 +2,8 @@
     import { ref, onMounted } from 'vue'
     const firstNumber = ref(parseInt(localStorage.getItem('firstNumber')) || 0);
     const lastNumber = ref(parseInt(localStorage.getItem('lastNumber')) || 1);
-    const borderColor = ref(localStorage.getItem('borderColor') || '#ffffff');
-    const innerColor = ref(localStorage.getItem('innerColor') || '#808080');
+    const borderColor = ref(localStorage.getItem('borderColor') || '#FFF351');
+    const innerColor = ref(localStorage.getItem('innerColor') || '#FFF351');
     const generate = ref(localStorage.getItem('generate') === 'true' || false);
     const clickedSquares = ref(JSON.parse(localStorage.getItem('clickedSquares')) || []);
 
