@@ -67,6 +67,7 @@
     // Aggiorna il colore del bordo all'avvio
     updateBorderColor();
 
+    //ricarica i riquadri cliccati all'avvio
     onMounted(() => {
         // Aggiungi le classi 'checked' ai quadrati cliccati
         clickedSquares.value.forEach(id => {
