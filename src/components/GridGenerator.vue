@@ -86,30 +86,33 @@
     <div class="container-fluid mt-5">
         <div class="d-flex justify-content-center pt-4 align-items-center">
             <div class="d-flex flex-column gap-5" v-if="!generate">
-                <div class="d-flex gap-5">
-
+                <div class="d-flex flex-column gap-5">
                     
-                    <div class="d-flex flex-column gap-2 align-items-center">
-                        <label for="firstNumber">Grid color</label>
-                        <input type="color" id="colorPicker" name="colorPicker" v-model="borderColor">
+                    <div class="d-flex gap-5 justify-content-center">
+                        <div class="d-flex flex-column gap-2 align-items-start">
+                            <label for="firstNumber" class="align-self-center">Select first number</label>
+                            <input type="number" min="0" :max="lastNumber - 1" step="1"  v-model="firstNumber" id="firstNumber" class="inputWidth"/>
+                        </div>
+                        
+                        <div class="d-flex flex-column gap-2 align-items-start">
+                            <label for="lastNumber" class="align-self-center">Select last number</label>
+                            <input type="number" :min="0 + firstNumber" max="1000" step="1"  v-model="lastNumber" id="lastNumber" class="inputWidth"/>
+                        </div>
                     </div>
 
-                    <div class="d-flex flex-column gap-2 align-items-center">
-                        <label for="firstNumber">Inner color</label>
-                        <input type="color" id="colorPicker" name="colorPicker" @change="updateColor($event.target.value)">
-                    </div>
-
-                    <div class="d-flex flex-column gap-2 align-items-start">
-                        <label for="firstNumber" class="align-self-center">Select first number</label>
-                        <input type="number" min="0" :max="lastNumber - 1" step="1"  v-model="firstNumber" id="firstNumber" class="inputWidth"/>
-                    </div>
-                
-                    <div class="d-flex flex-column gap-2 align-items-start">
-                        <label for="lastNumber" class="align-self-center">Select last number</label>
-                        <input type="number" :min="0 + firstNumber" max="1000" step="1"  v-model="lastNumber" id="lastNumber" class="inputWidth"/>
+                    <div class="d-flex gap-5 justify-content-center">
+                        <div class="d-flex flex-column gap-2 align-items-center">
+                            <label for="firstNumber">Grid color</label>
+                            <input type="color" id="colorPicker" name="colorPicker" v-model="borderColor">
+                        </div>
+    
+                        <div class="d-flex flex-column gap-2 align-items-center">
+                            <label for="firstNumber">Inner color</label>
+                            <input type="color" id="colorPicker" name="colorPicker" @change="updateColor($event.target.value)">
+                        </div>
                     </div>
                 </div>
-    
+                
                 <div v-if="!generate" class="align-self-center">
                     <button class="btn btn-success" @click="generateGrid(firstNumber, lastNumber)">Generate!</button>
                 </div>
