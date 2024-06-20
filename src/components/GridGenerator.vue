@@ -1,7 +1,7 @@
 <script setup>
     import { ref, onMounted } from 'vue'
-    const firstNumber = ref(parseInt(localStorage.getItem('firstNumber')) || 0);
-    const lastNumber = ref(parseInt(localStorage.getItem('lastNumber')) || 1);
+    const firstNumber = ref(parseInt(localStorage.getItem('firstNumber')) || 1);
+    const lastNumber = ref(parseInt(localStorage.getItem('lastNumber')) || 2);
     const borderColor = ref(localStorage.getItem('borderColor') || '#FFF351');
     const innerColor = ref(localStorage.getItem('innerColor') || '#FFF351');
     const generate = ref(localStorage.getItem('generate') === 'true' || false);
@@ -15,6 +15,8 @@
                 localStorage.setItem('lastNumber', last);
                 localStorage.setItem('generate', true);
                 localStorage.setItem([]);
+                localStorage.setItem('borderColor', borderColor.value);
+                localStorage.setItem('innerColor', innerColor.value);
             }
         }
     }
@@ -22,8 +24,8 @@
     function reset() {
         generate.value = false;
         clickedSquares.value = [];
-        borderColor.value = '#ffffff';
-        innerColor.value = '#808080';
+        borderColor.value = '#FFF351';
+        innerColor.value = '#FFF351';
         firstNumber.value = 0;
         lastNumber.value = 1;
 
@@ -91,12 +93,12 @@
                     <div class="d-flex gap-5 justify-content-center">
                         <div class="d-flex flex-column gap-2 align-items-start">
                             <label for="firstNumber" class="align-self-center">Select first number</label>
-                            <input type="number" min="0" :max="lastNumber - 1" step="1"  v-model="firstNumber" id="firstNumber" class="inputWidth"/>
+                            <input type="number" min="1" :max="lastNumber - 1" step="1"  v-model="firstNumber" id="firstNumber" class="inputWidth"/>
                         </div>
                         
                         <div class="d-flex flex-column gap-2 align-items-start">
                             <label for="lastNumber" class="align-self-center">Select last number</label>
-                            <input type="number" :min="0 + firstNumber" max="1000" step="1"  v-model="lastNumber" id="lastNumber" class="inputWidth"/>
+                            <input type="number" :min="1 + firstNumber" max="1000" step="1"  v-model="lastNumber" id="lastNumber" class="inputWidth"/>
                         </div>
                     </div>
 
@@ -141,7 +143,7 @@
 
 <style scoped>
     :root{
-        --border-color: #ffffff;
+        --border-color: #FFF351;
     }
 
     .square{
