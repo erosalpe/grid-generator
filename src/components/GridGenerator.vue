@@ -119,7 +119,6 @@
                 <button class="btn btn-warning" @click="reset()">Reset</button>
             </div>
     
-            
         </div>
         
         <div class="row justify-content-center"  v-if="generate">
@@ -128,7 +127,7 @@
                     {{ firstNumber -1 + i }}
                 </div>
             </div>
-            <h2 class="mt-5 text-center">Left click to check a number</h2>
+            <h2 class="mt-5 text-center">Left click to check a box</h2>
         </div>
     </div>
     
