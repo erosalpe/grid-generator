@@ -27,7 +27,7 @@
         borderColor.value = '#FFF351';
         innerColor.value = '#FFF351';
         firstNumber.value = 1;
-        lastNumber.value = 1;
+        lastNumber.value = 2;
 
         // Rimuovi tutti i valori dal localStorage
         localStorage.removeItem('firstNumber');
