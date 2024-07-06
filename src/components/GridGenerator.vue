@@ -129,7 +129,7 @@
         
         <div class="row justify-content-center"  v-if="generate">
             <div class="d-flex flex-wrap gap-4 pt-5 col-sm-12 col-md-11 justify-content-center">
-                <div :class="['square', 'fw-bold', 'fs-5']" v-for="i in lastNumber - firstNumber + 1" :key="i" :id="i" @click="toggleClass(i)" :style="{ borderColor: borderColor }">
+                <div :class="['square', 'fw-bold', 'fs-2']" v-for="i in lastNumber - firstNumber + 1" :key="i" :id="i" @click="toggleClass(i)" :style="{ borderColor: borderColor }">
                     {{ firstNumber -1 + i }}
                 </div>
             </div>
@@ -148,8 +148,7 @@
     }
 
     .square{
-        border: 1px solid;
-        padding: 5px;
+        border: 5px solid;
         display: flex;
         align-items: center;
         justify-content: center;
